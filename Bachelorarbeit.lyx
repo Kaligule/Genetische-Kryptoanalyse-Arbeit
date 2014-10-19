@@ -77,10 +77,18 @@ Aufbau
 \end_layout
 
 \begin_layout Section
+Herausforderungen
+\end_layout
+
+\begin_layout Subsection
+Lokale Maxima
+\end_layout
+
+\begin_layout Subsection
 Natural Language Module
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Optimierungen
 \end_layout
 
