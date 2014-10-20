@@ -5,7 +5,7 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language ngerman
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -25,6 +25,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -55,7 +56,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language german
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -72,8 +73,59 @@
 Grundidee
 \end_layout
 
+\begin_layout Standard
+Beim Brechen eines kryptographischen Verfahrens 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+eher eines Textes
+\end_layout
+
+\end_inset
+
+ gilt es oft einen mächtigen Raum von möglichen Schlüsseln nach dem Richtigen
+ zu durchsuchen.
+ Um dieses Problem für eine gegebene verschlüsselte Nachricht zu lösen ist
+ ein hoher Rechenaufwand gerechtfertigt.
+ Um die große Menge an Möglichkeiten zu bewältigen sind oft ungewöhnliche
+ Methoden gefragt.
+\end_layout
+
+\begin_layout Standard
+Genetische Algorythmen eignen sich besonders, um aus großen Ereignisräumen
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+sicher dieses Wort?
+\end_layout
+
+\end_inset
+
+ besondere Lösungen heraus zu finden 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Zitat
+\end_layout
+
+\end_inset
+
+.
+ In so fern ist es fast verwunderlich, dass sie für das Brechen von Chiffren
+ bisher kaum diskutiert wurden.
+ In vorliegender Arbeit soll deshalb weiter darauf eingegangen werden.
+\end_layout
+
 \begin_layout Section
 Aufbau
+\end_layout
+
+\begin_layout Subsection
+Moo
 \end_layout
 
 \begin_layout Section
@@ -81,7 +133,7 @@ Herausforderungen
 \end_layout
 
 \begin_layout Subsection
-Lokale Maxima
+Crossover
 \end_layout
 
 \begin_layout Subsection
@@ -89,11 +141,39 @@ Natural Language Module
 \end_layout
 
 \begin_layout Subsection
+Lokale Maxima
+\end_layout
+
+\begin_layout Subsection
 Optimierungen
 \end_layout
 
 \begin_layout Section
+Ergebnisse
+\end_layout
+
+\begin_layout Subsection
+Substitutionsschiffren
+\end_layout
+
+\begin_layout Subsection
+Permutationsschiffren
+\end_layout
+
+\begin_layout Section
 Fazit
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintAll"
+bibfiles "bibliographie"
+options "bibtotoc,plain"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
