@@ -73,6 +73,22 @@ theorems-ams-bytype
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Grundidee
 \end_layout
@@ -322,10 +338,453 @@ TODO
 \end_layout
 
 \begin_layout Subsection
+Permutationschiffren
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition:Permutations-Schlüssel"
+
+\end_inset
+
+Ein Permutations-Schlüssel
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Mit Bindestrich? Siehe auch Masc-Schlüssel
+\end_layout
+
+\end_inset
+
+ der Periode 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+So heißt es im Code
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+ ist ein eine Permutation der Liste der Zahlen von 
+\begin_inset Formula $1$
+\end_inset
+
+ bis 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Ein Permutations-Schlüssel der Länge 
+\begin_inset Formula $n$
+\end_inset
+
+ definiert eine Verschlüsselung.
+ Dazu wird der Klartext in Listen der Länge 
+\begin_inset Formula $n$
+\end_inset
+
+ aufgeteilt
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Wenn beim Aufteilen eine Restliste mit kleinerer Länge als 
+\begin_inset Formula $n$
+\end_inset
+
+ übrigbleibt, wird diese direkt (ohne Permutation) wieder an den Chiffretext
+ angehängt.
+ Dies ist eine Designentscheidung, die keinen Einfluss auf den Rest der
+ Arbeit haben wird.
+ Andere Implementierungen sind ebenso denkbar.
+ 
+\end_layout
+
+\end_inset
+
+.
+ Diese und der Schlüssel werden jeweils auf die selbe Weise so permutiert,
+ dass der Schlüssel danach sortiert ist.
+ Danach werden die Listen wieder zusammengefügt.
+ Zum entschlüsseln geht man umgekehrt vor.
+\end_layout
+
+\begin_layout Example
+Der Text 
+\begin_inset Formula $\left[LOREMIPSUM\right]$
+\end_inset
+
+ soll mit dem Permutations-Schlüssel 
+\begin_inset Formula $[3,1,4,2]$
+\end_inset
+
+ chiffriert werden
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\left[LOREMIPSUM\right]\mbox{ \rightarrow\ }$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+L
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+E
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+E
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+L
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Formula $\rightarrow[OELRISMPMU]$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
 Monoalphabetische Substitutionschiffren
 \end_layout
 
 \begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition:Masc-Schlüssel"
+
+\end_inset
+
 Ein Masc-Schlüssel 
 \begin_inset Note Note
 status collapsed
@@ -363,7 +822,18 @@ sicher induziert?
 
 \end_inset
 
- stets (genau) eine Übersetzungstabelle.
+ stets (genau) eine Übersetzungstabelle und damit eine Masc-Verschlüsselung
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+eventuel genauer
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -419,7 +889,7 @@ Schreibweise nachschauen
 Das induziert die Übersetzungstabelle 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Cäsarchiffre"
+reference "Eigene-Module-schreiben"
 
 \end_inset
 
@@ -1003,411 +1473,6 @@ Cäsarchiffre
 \end_layout
 
 \begin_layout Subsection
-Permutationschiffren
-\end_layout
-
-\begin_layout Definition
-Ein Permutations-Schlüssel
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Mit Bindestrich? Siehe auch Masc-Schlüssel
-\end_layout
-
-\end_inset
-
- der Periode 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-So heißt es im Code
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $n\in\mathbb{N}$
-\end_inset
-
- ist ein eine Permutation der Liste der Zahlen von 
-\begin_inset Formula $1$
-\end_inset
-
- bis 
-\begin_inset Formula $n$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Example
-Der Text 
-\begin_inset Formula $\left[LOREMIPSUM\right]$
-\end_inset
-
- soll mit dem Permutations-Schlüssel
-\begin_inset Formula $[3,1,4,2]$
-\end_inset
-
- chiffriert werden
-\end_layout
-
-\begin_layout Example
-\begin_inset Formula $\left[LOREMIPSUM\right]\mbox{\rightarrow}$
-\end_inset
-
-
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="4">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-L
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-O
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-R
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-E
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-M
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-I
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-P
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-S
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-U
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-M
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\begin_inset Formula $\rightarrow$
-\end_inset
-
-
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="4">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-O
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-E
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-L
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-R
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-I
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-S
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-M
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-P
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-M
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-U
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\begin_inset Formula $\rightarrow[OELRISMPMU]$
-\end_inset
-
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Vielleicht auf Skript berufen, da hat er mal so etwas gemacht
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
 Moo
 \end_layout
 
@@ -1416,10 +1481,6 @@ Moo
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1440,13 +1501,176 @@ Generationenfluss in Moo
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Anpassungen an den Suchraum
+\end_layout
+
+\begin_layout Standard
+Da wir nach den Definitionen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Definition:Permutations-Schlüssel"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Definition:Masc-Schlüssel"
+
+\end_inset
+
+ suchen wir jeweils im Raum der Permutationen.
+\end_layout
+
+\begin_layout Standard
+Wir durchsuchen den Raum der Permutationen, ein solches Problem nennt man
+ Umordnungsproblem
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Plain Layout
+Ich bin mir nicht sicher ob ich dazu eine Quelle finde
+\end_layout
+
+\end_inset
+
+.
+ Prominente Beispiele dafür ist etwa das 
+\begin_inset Quotes gld
+\end_inset
+
+Traveling Salesman Problem
+\begin_inset Quotes grd
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Quelle, vielleicht mit 
+\begin_inset Quotes gld
+\end_inset
+
+Erstmals beschreiben bei ...
+\begin_inset Quotes grd
+\end_inset
+
 
 \end_layout
 
 \end_inset
 
 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Warum ist das Traveling salesman problem nicht Äquivalent mit einfachem
+ sortieren? Weil nicht klar ist, ob eine elementare veränderung die Lösung
+ besser oder schlechter macht.
+\end_layout
+
+\end_inset
+
+.
+ Die in Moo zur Verfügung stehenden Mutations und Crossover-Funktionen eignen
+ sich jedoch für Umordnungsprobleme nicht
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Querverweis auf Moo Kapitel
+\end_layout
+
+\end_inset
+
+.
+ Daher war es nötig, die entsprechenden Funktionen selbst zu schreiben und
+ einzubinden.
+\end_layout
+
+\begin_layout Standard
+Moo wurde eigentlich für Optimierungsprobleme geschrieben, etwa um Extrempunkte
+ einer Funktion 
+\begin_inset Formula $f:\mathbb{R}^{n}\rightarrow\mathbb{R}$
+\end_inset
+
+ zu finden oder das Rucksackproblem zu lösen
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Zitat gesucht, eventuel auf die Beispiele verweisen
+\end_layout
+
+\end_inset
+
+.
+ Die dabei auftretenden Genome sind Elemente aus 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ (mit dem Paket 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+) oder dem 
+\begin_inset Formula $\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+ beziehungsweise 
+\begin_inset Formula $\mathbb{Z}^{n}$
+\end_inset
+
+(mit dem Paket 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+), nicht aus 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "Eigene-Module-schreiben"
+
+\end_inset
+
+Deswegen mussten hierfür eigene Routinen geschrieben werden.
+ Diese sind in Kapitel 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Mutation und Permutation
+\end_layout
+
+\end_inset
+
+beschrieben.
 \end_layout
 
 \begin_layout Section
@@ -1547,7 +1771,7 @@ objective funktion
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Zitat
@@ -1556,7 +1780,7 @@ Zitat
 \end_inset
 
 ).
- In unserem Aufbau heißt diese funktion 
+ In unserem Aufbau heißt diese Funktion 
 \begin_inset Quotes gld
 \end_inset
 
@@ -1574,6 +1798,31 @@ reference "sub:Natural-Language-Module"
  diskutiert.
 \end_layout
 
+\begin_layout Standard
+Des Weiteren wird in den Kapiteln 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Mutation"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Crossover"
+
+\end_inset
+
+ auf die bereits in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Eigene-Module-schreiben"
+
+\end_inset
+
+ angedeuteten Erweiterungen von Moo eingegangen werden.
+\end_layout
+
 \begin_layout Subsection
 Natural Language Module
 \begin_inset CommandInset label
@@ -1586,7 +1835,38 @@ name "sub:Natural-Language-Module"
 \end_layout
 
 \begin_layout Subsection
+Mutation
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Mutation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ReorderingMutations.hs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Crossover
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Crossover"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1601,45 +1881,43 @@ Eltern
 \end_inset
 
  vereinen lassen.
- 
+ Ein Crossover von mehreren Eltern sollte also
+\end_layout
+
+\begin_layout Itemize
+ein den Eltern ähnliches Ergebnis liefern (wobei ähnlich nicht näher definiert
+ ist)
+\end_layout
+
+\begin_layout Itemize
+nicht trivial sein (einfach einen Elternteil blind imitieren)
+\end_layout
+
+\begin_layout Subsubsection
+Kantenrekombination
 \end_layout
 
 \begin_layout Standard
-Die in Moo zur Verfügung stehenden Crossover Funktionen eignen sich jedoch
- für 
-\begin_inset Quotes gld
-\end_inset
-
-Umordnungsprobleme
-\begin_inset Quotes grd
-\end_inset
-
- nicht
-\end_layout
-
-\begin_layout Standard
-Moo stellt mehrere Crossover Funktionen zur Verfügung, leider jedoch keine
- die für ein Ordnungsproblem sinnvoll wären 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Moo wurde eigentlich für Optimierungsprobleme geschrieben, etwa um Funktionen
- im 
-\begin_inset Formula $\mathbb{R}^{n}$
-\end_inset
-
- zu maximieren.
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Zitat gesucht
+ReorderingCrossOvers.hs
 \end_layout
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Da war noch eine andere Kantenrekombination, die nicht gut funktioniert
+ hat.
+ Nachschauen was das war.
 \end_layout
 
 \end_inset
@@ -1653,6 +1931,10 @@ Lokale Maxima
 
 \begin_layout Subsection
 Optimierungen
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
