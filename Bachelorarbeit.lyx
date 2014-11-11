@@ -89,6 +89,35 @@ LatexCommand tableofcontents
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Will ich eine kurzzusammenfassung? Abstract
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+In vorliegender Arbeit soll der Versuch dokumentiert werden, zwei simple
+ Chiffren mit Hilfe eines genetischen Verfahrens zu brechen.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Noch dazu schreiben, wie
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Grundidee
 \end_layout
@@ -140,8 +169,23 @@ Zitat gesucht
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+das habe ich dan später in den Abstract gebaut.
+ Wiederhohlung vermeiden! Andere Formulierung ausdenken
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 In vorliegender Arbeit soll der Versuch dokumentiert werden, zwei simple
  Chiffren mit Hilfe eines genetischen Verfahrens zu brechen.
+ 
 \end_layout
 
 \begin_layout Section
@@ -183,17 +227,14 @@ Danach werden wir in einem Genetischen Verfahren versuchen, uns den echten
 
 \begin_layout Standard
 Für die Implementierung des Algorythmuses wurde die Programmiersprache Haskell
- und das Packet Moo
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Querverweis
-\end_layout
+ und das Paket Moo (Näheres in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Moo"
 
 \end_inset
 
- ausgewählt.
+) ausgewählt.
 \end_layout
 
 \begin_layout Subsection
@@ -1474,6 +1515,25 @@ Cäsarchiffre
 
 \begin_layout Subsection
 Moo
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Moo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Moo ist eine in Haskell geschriebene Bibliothek, mit der Genetische Algorythmen
+ implementiert werden können.
+ Verschiedene Operatoren werden definiert und bereit gestellt, jedoch können
+ auch Eigne verwendet werden.
+ Mit genügend Expertise kann so in wenigen Zeilen Code ein vollständiger
+ Genetischer Algorithmus implementiert werden.
+ Zudem existieren Verweise auf akademische Arbeiten, in denen diese Operatoren
+ vorgestellt und diskutiert werden.
+ Moo ist damit für die Wissenschaftliche Arbeit prädestiniert.
 \end_layout
 
 \begin_layout Standard
@@ -1486,6 +1546,16 @@ status open
 \begin_inset Graphics
 	filename Pictures/lifecycle.pdf
 	width 100text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Einzelne Stationen Nummerieren
+\end_layout
 
 \end_inset
 
@@ -1790,6 +1860,112 @@ Natural Language Module
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Natural-Language-Module"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Gesucht ist eine Funktion
+\end_layout
+
+\begin_layout LyX-Code
+naturalism  :: String
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+Double
+\end_layout
+
+\begin_layout Standard
+die angibt, 
+\begin_inset Quotes gld
+\end_inset
+
+wie sehr ein String natürliche Sprache ist
+\begin_inset Quotes grd
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Mehr erklären
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Gewichtung
+\end_layout
+
+\begin_layout Standard
+Schon in einem frühen Stadium des Projektes wurde klar, dass die Fittnesfunktion
+ verschiedene Kriterien berücksichtigen sollte
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+siehe Kriterien
+\end_layout
+
+\end_inset
+
+, die (unterschiedlich gewichtet) in die Bewertung eingehen.
+ Diese Gewichtung kann für unterschiedliche Zwecke angepasst werden.
+\end_layout
+
+\begin_layout Example
+Eine Häufigkeitsanalyse einzelner Buchstaben 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+wie in Dingsbums nummer n beschrieben
+\end_layout
+
+\end_inset
+
+ ist beim lösen einer Substitutionschiffre eine gute Idee
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Zitat gesucht
+\end_layout
+
+\end_inset
+
+, bei einer reinen Permutationschiffre aber sinnlos, da sich die Häufigkeit
+ der Buchstaben durch Permutation nicht verändert.
+\end_layout
+
+\begin_layout Subsubsection
+Eichung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Wir eichen unsere Funktion nicht.
+ Das wäre unnötiger Aufwand, den ein anderer machen kann.
+ Wir 
+\begin_inset Quotes gld
+\end_inset
+
+wissen
+\begin_inset Quotes grd
+\end_inset
+
+ einfach, wie gut wir werden müssen.
+\end_layout
 
 \end_inset
 
@@ -2133,7 +2309,6 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename Pictures/Generated/noManipulationGraph.svg
-	width 45text%
 
 \end_inset
 
@@ -2371,11 +2546,20 @@ Kantenrekombination
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Weicker"
+
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-ReorderingCrossOvers.hs
+ReorderingCrossOvers.hs: edge crossover, found in Karsten Weickers 'Evolutionaere
+ Algorythmen' (second edition) as 'Kantenrekombination' (Teubner, german
+ book)
 \end_layout
 
 \end_inset
