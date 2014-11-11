@@ -94,7 +94,7 @@ LatexCommand tableofcontents
 status open
 
 \begin_layout Plain Layout
-Will ich eine kurzzusammenfassung? Abstract
+Will ich eine Kurzzusammenfassung? Abstract
 \end_layout
 
 \end_inset
@@ -103,14 +103,27 @@ Will ich eine kurzzusammenfassung? Abstract
 \end_layout
 
 \begin_layout Abstract
-In vorliegender Arbeit soll der Versuch dokumentiert werden, zwei simple
- Chiffren mit Hilfe eines genetischen Verfahrens zu brechen.
- 
+Der Versuch, zwei einfache Chiffren mit Hilfe eines genetischen Verfahrens
+ zu brechen,
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Noch dazu schreiben, wie
+hier ist bestimmt ein Kommafehler drin
+\end_layout
+
+\end_inset
+
+ wird dokumentiert und die Ergebnisse ausgewertet.
+ Auf das Problem, eine geeignete Fittnesfunktion zu finden wird besonders
+ eingegangen und erklärt, warum Genetische Algorithmen werden in dieser
+ Form in der modernen Kryptographie keine Rolle spielen.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Das geht präziser.
+ 
 \end_layout
 
 \end_inset
@@ -2591,7 +2604,17 @@ Optimierungen
 \end_layout
 
 \begin_layout Section
-Ergebnisse
+Ergebnisse 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Analyse
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2604,6 +2627,82 @@ Permutationsschiffren
 
 \begin_layout Section
 Fazit
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Eine gute Fittnesfunktion zu finden ist extrem schwer.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Immerhin kann man das problem der Fittnesfunktion gut abstrahieren
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Da könnte man eine eigene Bibliothek draus machen
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+wäre ja auch für Sprachwissenschaftler vielleicht ganz interessant
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Warum eigentlich? Vielleicht auch nicht interessant.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Für mich wäre es interessant
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+(bei iOS gibts eine Funktion, die die Sprache eines Textes herausfindet)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Genetische Verfahren spielen in der modernen Kryptographie praktisch keine
+ Rolle, denn
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Moderne Chiffren sind gegen Genetische Angriffe quasi immun 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Weil die entschlüsselungsfunktion sehr unstetig ist.
+ Wie heißt das professionell? Stichwort: Hashfunktionen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Genetische Algorythmen sind letztlich Heuristiken, das ist meistens keine
+ gute Sache für Kryptographie.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Anhang
 \end_layout
 
 \begin_layout Standard
