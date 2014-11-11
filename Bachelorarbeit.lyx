@@ -1958,6 +1958,36 @@ Zitat gesucht
  der Buchstaben durch Permutation nicht verändert.
 \end_layout
 
+\begin_layout Standard
+Für diese Gewichtungen wurde ein Eigener Datentyp erschaffen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO: Code raussuchen und einfügen (Typemodule)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Example
+Für irgendeine Evolution wurde ab und zu diese Gewichtung eingeführt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Eichung
 \end_layout
@@ -2703,6 +2733,19 @@ Genetische Algorythmen sind letztlich Heuristiken, das ist meistens keine
 
 \begin_layout Part*
 Anhang
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Wie verweist man auf einzelen Teile von Moo?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
