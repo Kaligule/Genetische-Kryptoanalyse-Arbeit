@@ -89,24 +89,11 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Will ich eine Kurzzusammenfassung? Abstract
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Abstract
 Der Versuch, zwei einfache Chiffren mit Hilfe eines genetischen Verfahrens
  zu brechen,
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 hier ist bestimmt ein Kommafehler drin
@@ -116,10 +103,10 @@ hier ist bestimmt ein Kommafehler drin
 
  wird dokumentiert und die Ergebnisse ausgewertet.
  Auf das Problem, eine geeignete Fittnesfunktion zu finden wird besonders
- eingegangen und erklärt, warum Genetische Algorithmen werden in dieser
- Form in der modernen Kryptographie keine Rolle spielen.
+ eingegangen und erklärt, warum Genetische Algorithmen in dieser Form in
+ der modernen Kryptographie keine Rolle spielen werden.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Das geht präziser.
@@ -136,6 +123,15 @@ Grundidee
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Das Problem
+\end_layout
+
+\end_inset
+
 Beim Angreifen eines kryptographischen Verfahrens 
 \begin_inset Note Note
 status collapsed
@@ -155,6 +151,15 @@ eher eines Textes
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Die Lösungsidee
+\end_layout
+
+\end_inset
+
 Genetische Algorithmen eignen sich besonders, um aus großen Ereignisräumen
  
 \begin_inset Note Note
@@ -183,7 +188,7 @@ Zitat gesucht
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 das habe ich dan später in den Abstract gebaut.
@@ -198,15 +203,72 @@ das habe ich dan später in den Abstract gebaut.
 \begin_layout Standard
 In vorliegender Arbeit soll der Versuch dokumentiert werden, zwei simple
  Chiffren mit Hilfe eines genetischen Verfahrens zu brechen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Aufbau der Arbeit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Aufbau"
+
+\end_inset
+
+ 
+\begin_inset Quotes gld
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Aufbau"
+
+\end_inset
+
+
+\begin_inset Quotes grd
+\end_inset
+
+ werden die untersuchten Chiffren definiert und die Grundlagen des Verfahrens
+ besprochen.
  
 \end_layout
 
 \begin_layout Section
-Aufbau
+Grundlagen
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Aufbau"
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Eher Grundlagen oder sowas
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Untersucht werden sollen Deutsche Texte, welche mit Monoalphabetischer Substitut
+Untersucht werden sollen deutsche Texte, welche mit Monoalphabetischer Substitut
 ion beziehungsweise einer Permutation chiffriert wurden.
  (Nach 
 \begin_inset Note Note
@@ -214,22 +276,48 @@ status collapsed
 
 \begin_layout Plain Layout
 Des Buch was mir der Ruppert empfohlen hat
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Nochmal beim Ruppert nachfragen, welches das war.
+ Ich finde es in der Bib leider nicht mehr.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
  kann man davon ausgehen, dass das Verschlüsselungsverfahren dem Angreifer
  bekannt ist.) Diese Chiffren werden in den Kapiteln
-\begin_inset Note Note
-status collapsed
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Permutationschiffren"
 
-\begin_layout Plain Layout
-TODO Querverweis
-\end_layout
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Monoalphabetische-Substitutionschiffren"
 
 \end_inset
 
  genau spezifiziert werden.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Irgendwo sollte noch stehen, dass diese Verschlüsselungsverfahren crap sind.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -239,7 +327,7 @@ Danach werden wir in einem Genetischen Verfahren versuchen, uns den echten
 \end_layout
 
 \begin_layout Standard
-Für die Implementierung des Algorythmuses wurde die Programmiersprache Haskell
+Für die Implementierung des Algorithmuses wurde die Programmiersprache Haskell
  und das Paket Moo (Näheres in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -258,10 +346,20 @@ Normalisieren
 Vor dem Verschlüsseln ist es üblich, gewisse Änderungen an einem Text durch
  zu führen, damit er vollständig im Klartextalphabet liegt
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Sagt man das so?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Zitat wäre nicht schlecht
 \end_layout
 
 \end_inset
@@ -393,6 +491,49 @@ TODO
 
 \begin_layout Subsection
 Permutationschiffren
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Permutationschiffren"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ein Permutationschiffre vertauscht die Zeichen eines Textes nach einem durch
+ einen Schlüssel festgelegten Muster.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Weitere Informationen finden sich in QUELLE
+\end_layout
+
+\end_inset
+
+ Permutationschiffren gelten als nicht sicher 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Quelle wäre cool
+\end_layout
+
+\end_inset
+
+ und können (wie hier) allenfalls als Lehrbeispiele gelten.
+ Wir beschränken uns in dieser Arbeit auf zyklische Chiffren
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Quelle und wie de richtig heißen
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Definition
@@ -830,6 +971,13 @@ M
 
 \begin_layout Subsection
 Monoalphabetische Substitutionschiffren
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Monoalphabetische-Substitutionschiffren"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -845,6 +993,47 @@ Abkürzung eleganter einführen
 
  besticht durch ihren einfachen Ansatz: Jeder Buchstabe wird durch einen
  anderen ersetzt.
+ Sie erfeute sich lange Zeit großer Beliebtheit, weshalb es auch eine große
+ Zahl an Varianten existiert
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Welche aufzählen.
+\end_layout
+
+\end_inset
+
+.
+ Wir beschränken uns auf die 
+\begin_inset Quotes gld
+\end_inset
+
+Urform
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Heute gelten Substitutionschiffren als nicht mehr sicher und können, wie
+ die in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Permutationschiffren"
+
+\end_inset
+
+ besprochenen Permutationschiffren
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+braucht es hier ein Zitat?
+\end_layout
+
+\end_inset
+
+ nur zur Inspiration oder zur Veranschaulichung dienen.
+ 
 \end_layout
 
 \begin_layout Definition
@@ -1568,6 +1757,24 @@ Moo ist eine in Haskell geschriebene Bibliothek, mit der Genetische Algorythmen
  Moo ist damit für die Wissenschaftliche Arbeit prädestiniert.
 \end_layout
 
+\begin_layout Subsubsection
+Ein Zyklus eines Genetischen Algorithmuses in Moo
+\end_layout
+
+\begin_layout Standard
+Eine Generation durchläuft stets die gleichen Schritte: 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Hier muss was besseres hin, was auch auf die Abbildung verweißt.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 wide false
@@ -1582,20 +1789,189 @@ status open
 \end_inset
 
 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Generationenfluss-in-Moo"
+
+\end_inset
+
+Generationenfluss in Moo - Genome sind mit römischen Zahlen gekennzeichnet.
+ 
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Einzelne Stationen Nummerieren
+Man könnte so ne coole Wolke um den rechten Teil zeichen, die quasi 
+\begin_inset Quotes gld
+\end_inset
+
+Genome verändern, vielleicht zum besseren
+\begin_inset Quotes grd
+\end_inset
+
+ heißt.
 \end_layout
 
 \end_inset
 
 
-\begin_inset Caption Standard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Die erste Generation wird durch rein zufällige Genome (X) gebildet.
+\end_layout
+
+\begin_layout Enumerate
+Die Genome (I) werden mit der Fitnessfunktion naturalism
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Plain Layout
-Generationenfluss in Moo
+monospace
+\end_layout
+
+\end_inset
+
+ bewertet.
+ Man erhält Tupel vom Typ (Genome, Double)
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+monospace
+\end_layout
+
+\end_inset
+
+ (II), die Fitness wird nach 5.
+ jedoch wieder 
+\begin_inset Quotes gld
+\end_inset
+
+vergessen
+\begin_inset Quotes grd
+\end_inset
+
+, weil sie nicht mehr gebraucht wird.
+\end_layout
+
+\begin_layout Enumerate
+Es wird festgestellt, ob die Evolution beendet werden soll .
+ Dies ist der Fall wenn eines der folgenden Kriterien zutrifft:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Ein Genom hat eine so hohe Fitness, dass das Problem wahrscheinlich gelößt
+ ist.
+\end_layout
+
+\begin_layout Enumerate
+Die maximale Anzahl an Generationen ist erreicht.
+\end_layout
+
+\begin_layout Enumerate
+Die zur Verfügung gestellte Zeit ist abgelaufen.
+\end_layout
+
+\begin_layout Standard
+Falls die keines dieser Kriterien zutrifft, läuft die Evolution weiter bei
+ 5.
+ weiter.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Der Algorithmus bricht ab und gibt das zu diesem Zeitpunkt beste Genom als
+ mögliche Lösung aus.
+\end_layout
+
+\begin_layout Enumerate
+Es werden zwei Gruppen erstellt:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Die besten Genome (III) gehen zusätzlich unverändert in die nächste Generation
+ ein (wir sprechen von der 
+\begin_inset Quotes gld
+\end_inset
+
+Elite
+\begin_inset Quotes grd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Hier wird eine Auswahl getroffen, das muss hier rein.
+\end_layout
+
+\end_inset
+
+Aus den Genomen (IV) (also Elite und Nichtelite) wird in 6.
+ und 7.
+ der Rest der nächsten Generation erstellt.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Die Genome werden in Gruppen eingeteilt, zwischen denen ein Crossover (in
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Crossover"
+
+\end_inset
+
+ näher erklärt) durchgeführt wird.
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fn:Frisches-Blut"
+
+\end_inset
+
+Bisweilen erlaubt man hier (gestrichelte Linie) auch zufälligen Genomen
+ (X) mit einzufließen, 
+\begin_inset Quotes gld
+\end_inset
+
+um das Erbgut frisch zu halten
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Dies wird aber von Moo derzeit noch nicht unterstützt und wurde deshalb
+ nicht implementiert.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Evtl Quelle
 \end_layout
 
 \end_inset
@@ -1606,6 +1982,80 @@ Generationenfluss in Moo
 \end_inset
 
 
+\end_layout
+
+\begin_layout Enumerate
+Ein Teil der entstandenen Genome wird mutiert (genauer beschrieben in Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Mutation"
+
+\end_inset
+
+).
+ Die so entstandenen Genome bilden die nächste Generation, der Algorithmus
+ springt zurück zu Punkt 2.
+\end_layout
+
+\begin_layout Standard
+Selbstverständlich existieren zahlreiche Abwandlungen dieses Ablaufes.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Hier fehlt noch Zeug
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Stellschrauben und Parameter
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ausführen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Stellschrauben, an denen wir drehen können sind also:
+\end_layout
+
+\begin_layout Itemize
+Die Fitnessfunktion (naturalism)
+\end_layout
+
+\begin_layout Itemize
+Die Größe der Elite
+\end_layout
+
+\begin_layout Itemize
+Die Selectionsoperation
+\end_layout
+
+\begin_layout Itemize
+Die Mutationsoperation
+\end_layout
+
+\begin_layout Itemize
+Die Initialisierung (random genomes)
+\end_layout
+
+\begin_layout Itemize
+Die Abbruchbedingungen
 \end_layout
 
 \begin_layout Subsubsection
@@ -1811,7 +2261,7 @@ näher
 \begin_inset Quotes gld
 \end_inset
 
-Fittnessfunktion
+Fitnessfunktion
 \begin_inset Quotes grd
 \end_inset
 
@@ -2057,24 +2507,92 @@ Eichung
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Note Comment
 status open
 
 \begin_layout Plain Layout
-Wir eichen unsere Funktion nicht.
- Das wäre unnötiger Aufwand, den ein anderer machen kann.
- Wir 
+Hier könnte man Forschung betreiben
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An diesem Punkt würde man normalerweise darüber nachdenken, die Fitnessfunktion
+ zu eichen.
+ Wie hoch muss der Wert eine Strings sein, damit er als 
 \begin_inset Quotes gld
 \end_inset
 
-wissen
+natürlich
 \begin_inset Quotes grd
 \end_inset
 
- einfach, wie gut wir werden müssen.
- Deshalb bekommen wir auch Werte im Millionenbereich.
- Wir müssen nur aufpassen, dass wir nicht über die Double-grenze kommen.
- In der Dokumentation zu Double
+ gilt? Ist die Grenze konstant oder steigt sie mit der Länge des Strings
+ an? Linear vielleicht oder exponentiell? Ist es sinnvoll, die Fitnes mit
+ einer entsprechenden Größe zu skalieren, so dass später Aussagen getroffen
+ werden können wie 
+\begin_inset Quotes gld
+\end_inset
+
+Bei Fittnesswerten über 
+\begin_inset Formula $100$
+\end_inset
+
+ kann das Problem als gelößt angesehen werden.
+\begin_inset Quotes grd
+\end_inset
+
+ oder 
+\begin_inset Quotes gld
+\end_inset
+
+Sprünge von 
+\begin_inset Formula $3,5$
+\end_inset
+
+ oder mehr kommen nur in den ersten Generationen vor.
+\begin_inset Quotes grd
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Tun wir aber nicht.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Diese Fragen wollen wir hier nicht untersuchen.
+ Im Programm legen wir statdessen händisch eine Obergrenze fest, ab der
+ unsere Teststrings für natürlich gelten.
+ Hier ist Raum für weitere Untersuchungen, doch diese sind nicht Teil dieser
+ Arbeit.
+ Deswegen gehen die Fittneswerte (die ursprünglich bis etwa 
+\begin_inset Formula $100$
+\end_inset
+
+ geplant waren) auch regelmäßig in die Millionen.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Solange wir kein Problem mit den Doubles bekommen kann unsere Fitnesfunktion
 \end_layout
 
 \end_inset
@@ -2169,12 +2687,12 @@ https://en.wikipedia.org/wiki/Double-precision_floating-point_format
 \end_layout
 
 \begin_layout Subsubsection
-Kontrolle
+Realitätsabgleich
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Kein guter Name
+Besser als Kontrolle, aber viellcich gibt es noch einen besseren Titel
 \end_layout
 
 \end_inset
@@ -2212,39 +2730,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Der Blindtext
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Welcher? Das muss ich noch irgendwo festlegen
-\end_layout
-
+Je ähnlicher der Schlüssel dem trivialen Schlüssel 
+\begin_inset Formula $\left[1,2,3,4\right]$
 \end_inset
 
- wird mit Permutations-Schlüsseln der Länge 4 chiffriert und mit der Funktion
- naturalism 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-naturlism in Monospace schreiben, wie geht das inline?
-\end_layout
-
-\end_inset
-
- (und den Standardkriterien) 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Standardkriterien irgendwo einführen
-\end_layout
-
-\end_inset
-
- bewertet.
- 
+ ist, desto größer ist die Fitness des damit verschlüsselten Klartextes.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:NaturalismHistogram"
@@ -2286,7 +2776,17 @@ in monospace
 
 \end_inset
 
- des damit chiffrierte Blindtextes aufgetragen und absteigend sortiert.
+ des damit chiffrierte Klartextes 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Welcher? Das muss ich noch irgendwo festlegen
+\end_layout
+
+\end_inset
+
+ aufgetragen und absteigend sortiert.
  Links stehen dabei die Schlüssel mit den besten Werten, rechts die schlechteste
 n.
 \end_layout
@@ -2307,7 +2807,7 @@ wurde der eigentlich mal definiert
 \end_inset
 
  mit einem fast doppelt so großen Wert wie die der Anderen.
- Die Schlüssel daneben gehen häufig aus shifts 
+ Die Schlüssel daneben gehen häufig aus Shifts 
 \begin_inset Note Note
 status open
 
@@ -2317,7 +2817,7 @@ shift war schon mal definiert
 
 \end_inset
 
- oder flips 
+ oder Flips 
 \begin_inset Note Note
 status open
 
@@ -2363,41 +2863,8 @@ Die sollten noch irgendwo stehen
 \end_layout
 
 \begin_layout Standard
-Dies deutet darauf hin das die gewählte Fittnesfunktion gut gewählt ist.
- Man würde sich 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Diagramm ein bisschen analysieren:
-\end_layout
-
-\begin_layout Itemize
-ganz links steht der Triviale schlüssel
-\end_layout
-
-\begin_layout Itemize
-weiter links stehen Schlüssel mit wenig veränderung
-\end_layout
-
-\begin_layout Itemize
-ganz rechts stehen 
-\begin_inset Quotes gld
-\end_inset
-
-gut durchgemischte
-\begin_inset Quotes grd
-\end_inset
-
- Schlüssel
-\end_layout
-
-\end_inset
-
-
+Dies deutet darauf hin das die gewählte Fittnesfunktion gut gewählt ist,
+ auch wenn es wünschenswert wäre, die Unterschiede deutlicher herauszuarbeiten.
 \end_layout
 
 \begin_layout Standard
@@ -2741,13 +3208,10 @@ mutation :: MutationOp a
 
 .
  Eine genaue und ausführliche Erklärung der Grundlegenden Konzepte findet
- sich zum Beispiel in Quelle 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Quelle https://www.haskell.org/haskellwiki/IO_inside
-\end_layout
+ sich zum Beispiel in dem Artikel IO_inside
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IO_inside"
 
 \end_inset
 
@@ -2826,10 +3290,6 @@ name "fig:Ausgangsanordnung"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2850,8 +3310,8 @@ toren ein zufälliger ausgewählt.
 Es wäre denkbar, die Mutationsoperatoren in Abhängigkeit von der Generation
  zu wählen, auf die sie angewendet werden sollen.
  Leider ist Moo derzeit noch nicht dazu in der Lage.
- Ein erster Pullrequest, der den Weg dorthin ebnen könnte wurde bereitsam
- 2014-08-07 von kissandra79 auf Github erstellt
+ Ein erster Pullrequest, der den Weg dorthin ebnen könnte wurde bereits
+ am 2014-08-07 von kissandra79 auf Github erstellt
 \begin_inset Note Note
 status open
 
@@ -2876,23 +3336,65 @@ name "par:swapMutate"
 \end_layout
 
 \begin_layout Standard
-Es werden zwei zufällige Elemente des Elterngenomes vertauscht.
- Das führt zu relativ starken Veränderungen in einem sehr kleinen Teil des
- Genoms, der Rest bleibt unangetastet.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Pictures/Generated/swapMutate.svg
+	height 10cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Pictures/Generated/swapMutateHist.pdf
+	width 45text%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Idee: Zeige an einem anfangs geordneten Histogram auf, wie sich die Umordnung
- auswirkt.
+Diagramme passen nicht zusammen
+\end_layout
+
+\end_inset
+
+Swapmutate
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:swapmutate"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es werden zwei zufällige Elemente des Elterngenomes vertauscht.
+ Das führt zu relativ starken Veränderungen in einem sehr kleinen Teil des
+ Genoms, der Rest bleibt unangetastet.
 \end_layout
 
 \begin_layout Paragraph
@@ -2933,7 +3435,7 @@ shuffelMutate
 \end_layout
 
 \begin_layout Standard
-Es wird ein Teil der Liste ausgewählt und zufällig durchgemischt.
+cEs wird ein Teil der Liste ausgewählt und zufällig durchgemischt.
  Wenn dieser Teil zu groß wird geht natürlich viel Information verloren.
 \end_layout
 
@@ -3023,7 +3525,92 @@ ein den Eltern ähnliches Ergebnis liefern (wobei ähnlich nicht näher definier
 \end_layout
 
 \begin_layout Itemize
-nicht trivial sein (einfach einen Elternteil blind imitieren)
+nicht trivial sein (einfach einen Elternteil blind imitieren).
+\end_layout
+
+\begin_layout Standard
+Im Gegensatz zu Mutationen fällt es bei Crossover nicht leicht, sich geeignete
+ Funktionen auszudenken.
+ In 
+\begin_inset Quotes gld
+\end_inset
+
+Evolutionäre Algorythmen
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Weicker"
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+In Kapitel soundso
+\end_layout
+
+\end_inset
+
+ beschäftigt sich Karsten Weicker mit einem sehr ähnlichen Problem
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Weicker untersucht beispielhaft das Traveling Salesman Problem.
+\end_layout
+
+\end_inset
+
+ und diskutiert dabei zwei Funktionen
+\end_layout
+
+\begin_layout Subsubsection
+Ordnungsrekombination
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Kantenrekombination, die nicht gut funktioniert hat.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Insgesammt sind die Ergebnisse der Ordnungsrekombination nicht überzeugend,
+ die enstandenen Routen nehmen zu wenig von den Eltern mit.
+ Weicker zieht einen ähnlichen Schluss.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Quelle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -3052,21 +3639,6 @@ ReorderingCrossOvers.hs: edge crossover, found in Karsten Weickers 'Evolutionaer
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Da war noch eine andere Kantenrekombination, die nicht gut funktioniert
- hat.
- Nachschauen was das war.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Lokale Maxima
 \end_layout
@@ -3074,15 +3646,215 @@ Lokale Maxima
 \begin_layout Standard
 Wie in den meisten iterativen Verfahren besteht auch bei evolutionären Algorythm
 en die Gefahr, in einem lokalen Maximum zu enden.
- Es gibt jedoch einige Faktoren, die uns daavor schützen können:
+ Es gibt jedoch einige Faktoren, die uns davor schützen können: 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Mal über die Reihenfollge nachdenken, das war bisher nur zufällig, wie es
+ mir in den Sinn kam
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-DiePopulationsgröße
+Die
+\begin_inset space \space{}
+\end_inset
+
+Populationsgröße, selbst wenn sie 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+auf anraten von Lukas mit Quelle
 \end_layout
 
-\begin_layout Subsection
-Incest
+\end_inset
+
+ meist auf einen Wert unter 
+\begin_inset Formula $10$
+\end_inset
+
+ festgelegt war, erlaubt ein auswerten des Suchraumes an mehreren Stellen.
+ Selbst wenn einige der Genome einer Generation in einem lokalen Maximum
+ festhängen sollten ist es den anderen noch immer möglich, einen anderen
+ Weg einzuschlagen und die anderen mit zu ziehen.
+\end_layout
+
+\begin_layout Description
+Mutation ist kein zielgerichteter Prozess.
+ Die Richtung wird durch die Fittnesfunktion festgelegt, indem im Nachhinein
+ die Genome ausgewählt werden, die gute Ergebnisse erzielen.
+ Deswegen ist spricht, selbst wenn man sich bereits in einem lokalen Maximum
+ befindet, überhaupt nichts dagegen, dass ein Genom aus dem Extrempunkt
+ herausmutiert und einen günstigeren Pfad einschlägt.
+ Dafür braucht es nur eine einzige glückliche Mutation.
+\end_layout
+
+\begin_layout Description
+Der
+\begin_inset space \space{}
+\end_inset
+
+zufällige
+\begin_inset space \space{}
+\end_inset
+
+Input
+\begin_inset space \space{}
+\end_inset
+
+beim
+\begin_inset space \space{}
+\end_inset
+
+Crossover, der jedoch in unserer Implementierung fehlt
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Dazu sollte es einen extra unterpunkt im Kapitel Crossover geben.
+ Der kann dann hier verlinkt werden.
+ Auch zu Inzest sollte verlikt werden.
+\end_layout
+
+\end_inset
+
+, erlaubt es dem Zufall immer wieder Genome zu erzeugen, die sich von denen
+ der Elterngeneration relativ weit fortbewegen.
+ Dabei geht der bisherige Fortschritt nicht völlig verloren, da Elemente
+ des bisherigen und des zufälligen Genomes einfließen.
+\end_layout
+
+\begin_layout Description
+Mehrere
+\begin_inset space \space{}
+\end_inset
+
+Durchläufe
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In unserem Programm laufen stets mehrere verschiedene Durchläufe parallel.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Das sollte noch irgendwo genauer stehen.
+ Es verbessert die Quallität der Analyse, also vielleicht auch da.
+ Dann ein Querverweis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ verringern die Wahrscheinlichkeit, nur lokale Maxima zu finden.
+ Bei Heuristiken sollte stets überlegt werden ob es sinvoll sein könnte,
+ die Algorythmen mehrfach anzustoßen - um eventuelle Fehlentscheidungen
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Vielleicht nicht das besste Wort hier, weil es bei uns ja nicht so richtig
+ 
+\begin_inset Quotes gld
+\end_inset
+
+Entscheidungen
+\begin_inset Quotes grd
+\end_inset
+
+ sind.
+ Aber auch nicht so schlecht.
+\end_layout
+
+\end_inset
+
+auszubügeln.
+\end_layout
+
+\begin_layout Description
+Meteor, eine Funktion die zum Beispiel bei 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Arbeit vom Lukas
+\end_layout
+
+\end_inset
+
+ angewendet wird, löscht alle paar Generationen (zum Beispiel nach jeweils
+ 
+\begin_inset Formula $1000$
+\end_inset
+
+ neuen Generationen) die gesamte Population bis auf wenige Individuen aus
+ und ersetzt sie durch zufällig erzeugte Genome.
+ Dadurch bekommt der Zufall eine größere Chance, die Entwicklung in einen
+ günstige Richtung zu lenken.
+ Sollte das neue Genmaterial keine guten Eigenschaften mit einbringen wird
+ d
+\end_layout
+
+\begin_layout Standard
+Andere Effekte können die Gefahr der lokalen Maxima verstärken.
+\end_layout
+
+\begin_layout Description
+Elite 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Sollte schon vorher erklärt worden sein, dann Querverweis
+\end_layout
+
+\end_inset
+
+Wird die Zahl der Elitegenome groß gewählt, sinkt damit die Zahl der Inividuen
+ pro Generation, die Verbesserungen mit einbringen können.
+ Dies kann den Genpool träge und unbeweglich machen.
+ Deswegen wurde die Elite stets auf Werte zwischen 
+\begin_inset Formula $0$
+\end_inset
+
+ und 3 gelegt, nie höher.
+\end_layout
+
+\begin_layout Description
+Incest ist in unserer Implementierung in der Tat ein Problem
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+An Diagrammen aufzeigen, wo Inzest statfindet oder darauf verweisen
+\end_layout
+
+\end_inset
+
+.
+ Es kommt vor, dass die Genome einer Generation so ähnlich sind, dass durch
+ Crossover kaum mehr Veränderungen statfinden.
+ Durch Einschleusen von frischem Genmaterial (siehe Fußnote 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fn:Frisches-Blut"
+
+\end_inset
+
+) ließe sich dieses Phänomen wirkungsvoll bekämpfen.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -3090,12 +3862,15 @@ Optimierungen
 \end_layout
 
 \begin_layout Section
-Ergebnisse 
+Analyse der Ergebnisse 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Analyse
+Mehrfachdurchläufe, um Einzelfälle auszuschließen
 \end_layout
 
 \end_inset
@@ -3208,6 +3983,16 @@ Wie verweist man auf einzelen Teile von Moo?
 \begin_inset CommandInset index_print
 LatexCommand printindex
 type "idx"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ich hab gar keinen Index, will ich einen?
+\end_layout
 
 \end_inset
 

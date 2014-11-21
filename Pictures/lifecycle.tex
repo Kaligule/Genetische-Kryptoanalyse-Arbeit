@@ -9,6 +9,8 @@
 									, text width=4.5em
 									, align=flush center
 									, inner sep=1pt
+									, minimum width=3cm
+									, aspect=1
 									},
 		block/.style		={rectangle
 % 									, rounded corners
@@ -36,33 +38,36 @@
 	{
 		% row 1
 
-			\node [block] (start) {start}; & 
+			\node [block] (start) 								{1. start};&
+			;&
+			;& 
+			\node [cloud] (random)			{random genomes (X)}; &
+
 		\\
 		% row 2
-			\node [cloud] (genomes 1)					{genomes}; &
+			\node [cloud] (genomes 1)					{genomes (I)}; &
 			&
 		 \\
 		% row 3
-			\node [block] (naturalism)						{naturalism}; &
+			\node [block] (naturalism)						{2. naturalism}; &
 			&
-			\node [block] (mutate)							{mutate}; &
+			\node [block] (mutate)							{7. mutate}; &
 		\\
 		% row 4
-			\node [cloud] (evaluated genomes 1)	{evaluated genomes}; & 
-			\node [cloud] (elite genomes)				{elite genomes}; & 
-			\node [block] (crossover)						{crossover}; &
-			\node [cloud, dashed] (random)							{random}; &
+			\node [cloud] (evaluated genomes 1)	{evaluated genomes (II)}; & 
+			\node [cloud] (elite genomes)				{elite genomes (III)}; & 
+			\node [block] (crossover)						{6. crossover}; &
 		\\
 		% row 5
-			\node [decision] (finished)								{finished?}; & 
-			\node [decision] (select)								{select}; & 
-			\node [cloud] (evaluated genomes 2)	{evaluated genomes}; &
+			\node [decision] (finished)						{3. finished?}; & 
+			\node [decision] (select)						{5. \\select}; & 
+			\node [cloud] (evaluated genomes 2)	{B-elite genomes (IV)}; &
 
 
 		\\
 		% row 6
 
-			\node [block] (stop)								{stop}; &
+			\node [block] (stop)								{4. stop}; &
 		\\
 	};
 \begin{scope}[every path/.style=line, rounded corners=1cm]
@@ -72,13 +77,14 @@
 	\path					(genomes 1) 		-- (naturalism);
 	\path					(elite genomes) 	|- (genomes 1);
 	\path					(crossover) 			-- (mutate);
-	\path	[dashed]	(random)-- (crossover);
+	\path	[dashed]	(random)				|- (crossover);
+	\path					(random)				-- (start);
 	\path					(naturalism)			-- (evaluated genomes 1);
-	\path					(select)				-- (elite genomes);
+	\path					(select)				-- node [near start]{best}(elite genomes);
 	\path					(evaluated genomes 2)-- (crossover);
 	\path					(finished) 				--node [near start] {yes}(stop);
 	\path					(finished) 				--node [near start] {no}(select);
-	\path					(select)				-- (evaluated genomes 2);
+	\path					(select)				--  (evaluated genomes 2);
 	\path					(evaluated genomes 1) --(finished);
 \end{scope}
 \end{tikzpicture}
