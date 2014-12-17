@@ -1,0 +1,99 @@
+\usetikzlibrary{fit}++++
+
+
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground} % not really needed
+\pgfsetlayers{background,main,foreground}
+
+\tikzset{
+  double arrow/.style args={thickness is #1 color is #2}{
+    ->,line width=#1,#2, rounded corners = 0.8cm
+  }
+}
+
+
+\def\ystrait{2cm}
+\def\parentdiff{3.6cm}
+\def\lthickness{0.11cm}
+\def\innerRadius{2cm}
+
+
+\begin{tikzpicture}[ station/.style={circle, draw, thick, inner sep=0pt, minimum size = 7mm},
+									, genome/.style={circle, inner sep=-0.4cm, draw, line width=\lthickness, , fill=black!0},
+	]	
+	
+	
+	\begin{scope}
+
+		\begin{scope}[xshift=0cm]
+		\foreach \n in {1,2,...,11}{
+			\draw node [station] (a\n) at (\n *360/11-360/11:\innerRadius) {\n};
+		}
+		\draw [very thick]
+			(a1) -- 
+			(a2) --
+			(a3) --
+			(a4) --
+			(a5) --
+			(a6) --
+			(a7) --
+			(a8) --
+			(a9) --
+			(a10) --
+			(a11);
+		\end{scope}
+	
+		\begin{scope}[xshift=2* \parentdiff]
+		\foreach \n in {1,2,...,11}{
+			\draw node [station] (b\n) at (\n *360/11-360/11:\innerRadius) {\n};
+		}
+		\draw [very thick]
+			(b1) -- 
+			(b2) --
+			(b3) --
+			(b4) --
+			(b5) --
+			(b6) --
+			(b7) --
+			(b8) --
+			(b9) --
+			(b10) --
+			(b11);
+		\end{scope}
+
+	\end{scope}
+
+
+	\begin{scope}[yshift=-6.5cm, xshift=\parentdiff]
+
+		\begin{scope}[xshift=0cm]
+		\foreach \n in {1,2,...,11}{
+			\draw node [station] (c\n) at (\n *360/11-360/11:\innerRadius) {\n};
+		}
+		\draw [very thick]
+			(c1) -- 
+			(c2) --
+			(c3) --
+			(c4) --
+			(c5) --
+			(c6) --
+			(c7) --
+			(c8) --
+			(c9) --
+			(c10) --
+			(c11);
+		\end{scope}
+	
+
+	\end{scope}
+
+	\begin{pgfonlayer}{background}
+		\node (parent1) [genome, fit=(a1)(a2)(a3)(a4)(a5)(a6)(a7)(a8)(a9)(a10)(a11)] {};
+		\node (parent2) [genome, fit=(b1)(b2)(b3)(b4)(b5)(b6)(b7)(b8)(b9)(b10)(b11)] {};
+		\node (child) [genome, fit=(c1)(c2)(c3)(c4)(c5)(c6)(c7)(c8)(c9)(c10)(c11)] {};
+	\end{pgfonlayer}
+
+	\draw[double arrow=thickness is 4pt color is black](parent1.east)  -| (child.north);
+	\draw[double arrow=thickness is 4pt color is black](parent2.west)  -| (child.north);
+
+\end{tikzpicture}
