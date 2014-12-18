@@ -1,0 +1,58 @@
+\begin{tikzpicture}[ultra thick]
+	
+	%nodes in the red genome have names of the form r1, r2 ...
+	%nodes in the blue genome have names of the form b1,br2 ...
+
+
+	\def\xskip{1.7}
+	\def\xArrowSkip{0}
+	\def\yskip{-2}
+	\def\halfSquare{0.5}
+	\def\leftListLength{4}
+	\def\control{1.15}
+	\def\mysquare{+(-\halfSquare , -\halfSquare  ) rectangle +(\halfSquare ,\halfSquare )}
+
+	%blue, upper left
+	\foreach \label/\position in {1/1, 5/2,  9/3,  7/4}
+   {
+		\draw [blue, thick] (\position,0) \mysquare;
+		\node (b\label) at (\position,0) {\label};
+   }
+	
+	%red, lower left
+\foreach \label/\position in {1/1,  2/2,  3/3,  4/4}
+   {
+		\draw [red, thick] (\position,\yskip) \mysquare;
+		\node (r\label) at (\position, \yskip) {\label};
+   }
+
+	%red. upper right
+\foreach \label/\position in {5/5,  6/6,  7/7,  8/8,  9/9,  10/10,  11/11}
+   {
+		\draw [red, thick] (\xskip + \position, 0) \mysquare;
+		\node (r\label) at (\xskip + \position, 0) {\label};
+   }
+
+
+	%blue. lower right
+\foreach \label/\position in {8/5,  2/6,  3/7,  4/8,  10/9,  11/10,  6/11}
+   {
+		\draw [blue, thick] (\xskip + \position, \yskip) \mysquare;
+		\node (b\label) at (\xskip + \position, \yskip) {\label};
+   }
+
+	%Arrows
+
+	\node (lowerLeftStart) at (\leftListLength * 2 * \halfSquare + \halfSquare + \xArrowSkip ,\yskip){};
+	\node (upperLeftStart) at (\leftListLength * 2 * \halfSquare + \halfSquare + \xArrowSkip ,0){};
+	\node (upperRightEnd) at (\leftListLength * 2 * \halfSquare + \halfSquare + \xskip - \xArrowSkip ,0){};
+	\node (lowerRightEnd) at (\leftListLength * 2 * \halfSquare + \halfSquare + \xskip - \xArrowSkip ,\yskip){};
+
+	\draw [->, black, ultra thick] (lowerLeftStart)  .. controls +(right: \control) and +(left: \control) ..  (upperRightEnd);
+	\draw [->, black, ultra thick] (upperLeftStart)  .. controls +(right: \control) and +(left: \control) ..  (lowerRightEnd);
+
+	
+	%for orientation: find the red ball
+	%\draw [fill=red] (\leftListLength * 2 * \halfSquare + \halfSquare + \xArrowSkip ,\yskip) circle (0.1);
+
+\end{tikzpicture}
