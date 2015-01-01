@@ -8,8 +8,8 @@
 	\def\xArrowSkip{0}
 	\def\yskip{-2}
 	\def\halfSquare{0.5}
-	\def\leftListLength{4}
-	\def\control{1.15}
+	\def\redOneLength{4}
+	\def\control{1.1f5}
 	\def\mysquare{+(-\halfSquare , -\halfSquare  ) rectangle +(\halfSquare ,\halfSquare )}
 
 	%blue, upper left
@@ -43,16 +43,16 @@
 
 	%Arrows
 
-	\node (redArrowStart) at (\leftListLength * 2 * \halfSquare + \halfSquare + \xArrowSkip ,\yskip){};
-	\node (blueArrowStart) at (\leftListLength * 2 * \halfSquare + \halfSquare + \xArrowSkip ,0){};
-	\node (redArrowEnd) at (\leftListLength * 2 * \halfSquare + \halfSquare + \xskip - \xArrowSkip ,0){};
-	\node (blueArrowEnd) at (\leftListLength * 2 * \halfSquare + \halfSquare + \xskip - \xArrowSkip ,\yskip){};
+	\node (redArrowStart) at (\redOneLength * 2 * \halfSquare + \halfSquare + \xArrowSkip ,\yskip){};
+	\node (blueArrowStart) at (\redOneLength * 2 * \halfSquare + \halfSquare + \xArrowSkip ,0){};
+	\node (redArrowEnd) at (\redOneLength * 2 * \halfSquare + \halfSquare + \xskip - \xArrowSkip ,0){};
+	\node (blueArrowEnd) at (\redOneLength * 2 * \halfSquare + \halfSquare + \xskip - \xArrowSkip ,\yskip){};
 
 	\draw [->, red, ultra thick] (redArrowStart)  .. controls +(right: \control) and +(left: \control) ..  (redArrowEnd);
 	\draw [->, blue, ultra thick] (blueArrowStart)  .. controls +(right: \control) and +(left: \control) ..  (blueArrowEnd);
 
 	
 	%for orientation: find the red ball
-	%\draw [fill=red] (\leftListLength * 2 * \halfSquare + \halfSquare + \xArrowSkip ,\yskip) circle (0.1);
+	%\draw [fill=red] (\redOneLength * 2 * \halfSquare + \halfSquare + \xArrowSkip ,\yskip) circle (0.2);
 
 \end{tikzpicture}
