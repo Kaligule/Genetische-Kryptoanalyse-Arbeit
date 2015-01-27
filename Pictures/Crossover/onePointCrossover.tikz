@@ -27,7 +27,7 @@
    }
 
 	%red. upper right
-\foreach \label/\position in {5/5,  6/6,  7/7,  8/8,  9/9,  10/10,  11/11}
+\foreach \label/\position in {8/5,  2/6,  3/7,  4/8,  10/9,  11/10,  6/11}
    {
 		\draw [red, thick] (\xskip + \position, 0) \mysquare;
 		\node (r\label) at (\xskip + \position, 0) {\label};
@@ -35,7 +35,7 @@
 
 
 	%blue. lower right
-\foreach \label/\position in {8/5,  2/6,  3/7,  4/8,  10/9,  11/10,  6/11}
+\foreach \label/\position in {5/5,  6/6,  7/7,  8/8,  9/9,  10/10,  11/11}
    {
 		\draw [blue, thick] (\xskip + \position, \yskip) \mysquare;
 		\node (b\label) at (\xskip + \position, \yskip) {\label};
