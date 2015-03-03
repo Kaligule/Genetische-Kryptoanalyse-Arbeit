@@ -3,20 +3,29 @@
 
 \begin{tikzpicture}
 	[auto,
+		containsText/.style  ={%font=\large
+									},
 		decision/.style	={diamond
-									, draw=blue
-									, thick, fill=blue!20
+									, containsText
+									, draw
+									%, draw=blue
+									%, fill=blue!20
+									, thick
 									, text width=4.5em
+									%, text depth=1.cm
 									, align=flush center
 									, inner sep=1pt
 									, minimum width=3cm
 									, aspect=1
 									},
 		block/.style		={rectangle
+									, containsText
 % 									, rounded corners
-									, draw=blue
-									, thick, fill=blue!20
-									, text width=5em
+									, draw
+									%, draw=blue
+									, thick
+									%, fill=blue!20
+									, text width=2.6cm
 									, align=center
 									, minimum height=4em
 									},
@@ -26,10 +35,11 @@
 									,shorten >=2pt
 									},
 		cloud/.style		={ellipse
-									, rounded corners
-									, draw=green!40!black
+									, containsText
+									, draw
+									%, draw=green!40!black
 									, thick
-									, fill=green!45!white
+									%, fill=green!45!white
 									, minimum height=1.5cm
 									, inner sep=1pt
 									}
